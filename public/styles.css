@@ -1,0 +1,263 @@
+/*  Ben Nesbit
+ *  CS-290
+ *  styles.css
+ *  Note: I had a lot of help from https://codepo8.github.io/simple-carousel/carousel-simplest.html when
+ *  creating my carousel. I used their template and chaged some stuff to fit what I needed. I did not come
+ *  with this carousel template on my own, and would like to credit Christian Heilmann, the author of
+ *  the above site.
+ */
+
+body {
+  background-image: url(/images/leaf-background.png);
+  background-repeat: repeat;
+  background-size: 25%, 25%;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: #1c0a55;
+    border-style: inset;
+    border-width: 3px;
+}
+
+.link_buttons {
+  text-align: center;
+}
+
+.intraLinkButton {
+  border-radius: 7px;
+}
+
+.intro_hyperlink_out {
+  color:  #e6005c;
+}
+
+.home_carousel_box {
+  font-size: 10px;
+  position: relative;
+  display: inherit;
+  margin: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 950px;
+  border: 5px ridge #1c0a55;
+  overflow: hidden;
+}
+.home_carousel_content {
+  margin: 0;
+  padding: 0;
+}
+.home_carousel_content li {
+  font-size: 100px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+  text-align: center;
+}
+.active {
+  height: 550px;
+}
+.active li {
+  position: absolute;
+  top: 1000px;
+}
+.active li.current {
+  top: 30px;
+}
+
+.home_carousel_buttons {
+  display: none;
+}
+.active .home_carousel_buttons {
+  display: block;
+  padding: 5px 0;
+  background: #eee;
+  text-align: center;
+  z-index: 10;
+  position: relative;
+}
+.home_carousel_box button {
+  border: none;
+  visibility: hidden;
+}
+.active button {
+  visibility: visible;
+}
+.offscreen {
+  position: absolute;
+  left: -5000px;
+}
+
+.overview_ol{
+  text-align: left;
+}
+
+.overview_hyperlink_out {
+  color:  #e6005c;
+}
+
+.tricks_basic_movement_ul {
+  text-align: left;
+}
+
+.tricks_bombchu_hover_ol {
+  text-align: left;
+}
+
+.tricks_hyperlink_out {
+  color:  #e6005c;
+}
+
+.video_hyperlink_out {
+  color: #5fd3fc;
+}
+
+#home_header_box {
+  background-image: url(/images/tri-force-background.jpeg);
+  padding:4px;
+  border:5px ridge #1c0a55;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 400px;
+}
+
+#home_intro_box {
+  background-image: url(/images/tri-force-background.jpeg);
+  padding:4px;
+  border:5px ridge #1c0a55;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 850px;
+}
+
+#home_ul {
+  text-align: left;
+  font-weight: 550;
+}
+
+#home_ul_games {
+  text-align: left;
+  height: 75px;
+  width: 300px;
+  border: 3px ridge #81220c;
+  border-radius: 4px;
+  font: 26px;
+  overflow: auto;
+}
+
+#overview_header_box {
+  background-image: url(/images/tri-force-background.jpeg);
+  padding:4px;
+  border:5px ridge #1c0a55;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 750px;
+}
+
+#overview_main_box {
+  background-image: url(/images/tri-force-background.jpeg);
+  padding:4px;
+  border:5px ridge #1c0a55;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 750px;
+}
+
+#overview_picture_box {
+  padding:4px;
+  border:5px ridge #1c0a55;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 400px;
+}
+
+#tricks_header_box {
+  background-image: url(/images/tri-force-background.jpeg);
+  padding:4px;
+  border:5px ridge #1c0a55;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 750px;
+}
+
+#tricks_basic_box {
+  background-image: url(/images/tri-force-background.jpeg);
+  padding:4px;
+  border:5px ridge #1c0a55;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 850px;
+}
+
+#tricks_advanced_box {
+  background-image: url(/images/tri-force-background.jpeg);
+  padding:4px;
+  border:5px ridge #1c0a55;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 850px;
+}
+
+#videos_intro_box {
+  background-image: url(/images/tri-force-background.jpeg);
+  padding:4px;
+  border:5px ridge #1c0a55;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 400px;
+}
+
+#video_box {
+  background-image: url(/images/small-triforce.jpg);
+  background-size: 25%, 25%;
+  padding:4px;
+  border:5px ridge #1c0a55;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 850px;
+}
+
+#twitch_box {
+  background-image: url(/images/link-8-bit.jpg);
+  background-size: 25%, 25%;
+  padding:4px;
+  border:5px ridge #6441a5;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 500px;
+}

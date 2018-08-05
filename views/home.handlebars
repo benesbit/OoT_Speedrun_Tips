@@ -1,0 +1,132 @@
+<!--
+/*  Ben Nesbit
+ *  CS-290
+ *  home.handlebars
+ *  Note: I had a lot of help from https://codepo8.github.io/simple-carousel/carousel-simplest.html when
+ *  creating my carousel. I used their template and changed some stuff to fit what I needed. I did not come
+ *  with this carousel template on my own, and would like to credit Christian Heilmann, the author of
+ *  the above site.
+ */
+-->
+
+<br>
+
+<div class="link_buttons">
+  <a href="/"><button class="intraLinkButton">Home</button></a>
+  <a href="/OoT-speedrunning-overview"><button class="intraLinkButton">Speedrunning Overview</button></a>
+  <a href="/OoT-speedrunning-tricks"><button class="intraLinkButton">Speedrunning Tricks</button></a>
+  <a href="/OoT-speedrunning-videos"><button class="intraLinkButton">Speedrunning Videos</button></a>
+  <br><br>
+  <a href="/HudZelda.zip" download><button class="intraLinkButton">Item Tracker Download</button></a>
+</div>
+
+<br><br>
+
+<div id="home_header_box">
+  <h1>The Legend of Zelda - Ocarina of Time<h1>
+  <h2>A brief introduction into <br>speedrunning tricks and instructions
+        <br>for <a class="intro_hyperlink_out" href="https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time">Ocarina of Time</a>!</h2>
+</div>
+
+<br><br>
+
+<div class="home_carousel_box active">
+  <div class="home_carousel_buttons">
+    <button class="prev">
+      < <span class="offscreen">Previous</span>
+    </button>
+    <button class="next">
+      <span class="offscreen">Next</span> >
+    </button>
+  </div>
+  <ol class="home_carousel_content">
+    <li><img src="images/OoT_cover.jpg" title="The Legend of Zelda - Ocarina of Time"></li>
+    <li><img src="images/OoT_Banner.jpg" title="The Legend of Zelda - Ocarina of Time"></li>
+    <li><img src="images/OoT_Duo.jpg" title="&hearts; Link and Sheik playing music together &hearts;"></li>
+    <li><img src="images/link.jpg" title="Link! &hearts;"></li>
+  </ol>
+</div>
+
+<br><br>
+
+<div id="home_intro_box">
+  <h1>This webite includes a brief overview of <a class="intro_hyperlink_out" href="https://en.wikipedia.org/wiki/Speedrun">speedrunning</a> Ocaraina of Time (OoT), a few major tricks, and some videos and links<h1>
+  <h2>More detailed information regarding OoT speedrunning can be found at <br><a class="intro_hyperlink_out" href="https://www.speedrun.com/oot">The Official Zelda - OoT Speedrunning Website</a>.</h2>
+  <ul id="home_ul">
+    <li><a class="intro_hyperlink_out" href="https://www.speedrun.com/oot">The Official Zelda - OoT Speedrunning Website</a> also contains links to
+      information regarding speedrunning other games.</li>
+    <li><a class="intro_hyperlink_out" href="https://www.speedrun.com/">The main speedrunning site</a>
+          may also be directly accessed <a class="intro_hyperlink_out" href="https://www.speedrun.com/">here</a>.</li>
+    <li>Some of the most popular games to speedrun include:</li>
+      <ul id="home_ul_games">
+        <li><a class="intro_hyperlink_out" href="https://www.speedrun.com/oot">The Legend of Zelda - Ocarina of Time</a></li>
+        <li><a class="intro_hyperlink_out" href="https://www.speedrun.com/sm64">Super Mario 64</a></li>
+        <li><a class="intro_hyperlink_out" href="https://www.speedrun.com/supermetroid">Super Metroid</a></li>
+        <li><a class="intro_hyperlink_out" href="https://www.speedrun.com/undertale">Undertale</a></li>
+        <li><a class="intro_hyperlink_out" href="https://www.speedrun.com/Celeste">Celeste</a></li>
+        <li><a class="intro_hyperlink_out" href="https://www.speedrun.com/alttp">The Legend of Zelda - A Link to the Past</a></li>
+        <li><a class="intro_hyperlink_out" href="https://www.speedrun.com/ahit">A Hat in Time</a></li>
+        <li><a class="intro_hyperlink_out" href="https://www.speedrun.com/Portal">Portal</a></li>
+      </ul>
+    <li>The above list is just a brief list of popular games that are <a class="intro_hyperlink_out" href="https://en.wikipedia.org/wiki/Speedrun">speedrun</a>, but it is by no means complete.</li>
+    <li>More than likely <strong>YOUR</strong> favorite game is being run by someone, or has been at somepoint!</li>
+      <ul>
+        <li>Two good places to look are <a class="intro_hyperlink_out" href="https://www.youtube.com/results?search_query=Speedruns">YouTube</a>
+              and <a class="intro_hyperlink_out" href="https://www.twitch.tv/communities/speedrunning">Twitch</a>.</li>
+        <li>YouTube is better if you don't know any specific runners.</li>
+        <li>Twitch will allow you to watch players run games live! Provided they are online and streaming of course.</li>
+        <li>In addition to the entertainment it provides, the community of speedrunners also raises millions of dollars each year for charity.</li>
+        <li>The two most popular charity streams are:
+        <ul>
+          <li><a class="intro_hyperlink_out" href="https://www.youtube.com/user/gamesdonequick">Games Done Quick</a></li>
+          <li><a class="intro_hyperlink_out" href="https://www.youtube.com/channel/UC3Oe-jfrIqEGygxYBYyN6jQ">European Speedrunner Assembly</a></li>
+        </ul>
+        <li>All these communities are super friendly, so be sure to reach out to them if you have any questions!<li>
+      </ul>
+  </ul>
+</div>
+
+
+<script>
+  carousel = (function(){
+    var box = document.querySelector('.home_carousel_box');
+    var next = box.querySelector('.next');
+    var prev = box.querySelector('.prev');
+
+    var counter = 0;
+    var items = box.querySelectorAll('.home_carousel_content li');
+    var amount = items.length;
+    var current = items[0];
+
+    box.classList.add('active');
+
+    function navigate(direction) {
+      current.classList.remove('current');
+
+      counter = counter + direction;
+
+      if (direction === -1 &&
+          counter < 0) {
+        counter = amount - 1;
+      }
+
+      if (direction === 1 &&
+          !items[counter]) {
+        counter = 0;
+      }
+
+      current = items[counter];
+      current.classList.add('current');
+    }
+
+
+    next.addEventListener('click', function(ev) {
+      navigate(1);
+    });
+    prev.addEventListener('click', function(ev) {
+      navigate(-1);
+    });
+
+    navigate(0);
+  })();
+</script>
